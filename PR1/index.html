@@ -12,15 +12,15 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Основні стилі -->
-    <link rel="stylesheet" href="css/styles.css" >
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
     <!-- Навігаційна панель -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav fixed-top">
         <div class="container">
             <a class="navbar-brand brand-block" href="#">
                 <img src="images/logo.jpg" alt="Логотип АТ ДНІПРОСПЕЦПРОЕКТ" class="brand-logo">
@@ -69,9 +69,11 @@
                             Вона трансформує напругу з магістральних 35 кВ у розподільчу мережу 10 кВ, яка безпосередньо живить цехи з виготовлення
                             щитових прохідницьких комплексів, тюбінгів та спеціалізованого обладнання для будівництва тунелів. Оскільки завод є
                             єдиним споживачем цієї ПС, її конфігурація дозволяє гнучко регулювати потужність залежно від виробничого циклу підприємства — від
-                            енергозатратних процесів плавлення та зварювання спецсталей до випробувальних стендів готової продукції. Високий ступінь автоматизації
-                            «Лівобережної» гарантує стабільність напруги, що є критичним для точних верстатів із програмним керуванням, які використовуються у
-                            створенні прецизійних деталей підземних інженерних систем.
+                            енергозатратних процесів плавлення та зварювання спецсталей до випробувальних стендів готової продукції. Високий ступінь автоматизації 
+                            «Лівобережної» гарантує стабільність напруги, що критично важливо для точних верстатів із програмним керуванням, які використовуються 
+                            у створенні прецизійних деталей підземних інженерних систем. Підстанція була введена в експлуатацію у 2019 році після повної реконструкції 
+                            енергетики підприємства.
+
                         </p>
                         <p>
                             Функціонування підстанції нерозривно пов’язане зі стратегічною діяльністю материнської компанії — державного АТ «ДНІПРОСПЕЦПРОЕКТ»,
@@ -160,11 +162,12 @@
             <h2 class="section-title">Контактна інформація</h2>
 
             <div class="contact-card">
-                <p><strong>Адреса:</strong> Україна, Дніпропетровська обл., м. Дніпро, Лівобережний р-н, вул. Індустріальна, 9</p>
-                <p>
-                    <strong>Телефони:</strong>
-                    +380 (56) 248-21-09 | +380 (96) 219-19-89 | +380 (95) 189-24-28
-                </p>
+                <p><strong>Адреса: </strong> Україна, Дніпропетровська обл., м. Дніпро, Лівобережний р-н, вул. Індустріальна, 9</p>
+                <p><strong>Телефони: </strong> +380 (56) 248-21-09 | +380 (96) 219-19-89 | +380 (95) 189-24-28</p>
+                <p><strong>Телефон для юридичних питань: </strong> +380 (56) 246-19-86</p>
+                <p><strong>Пошта компанії: </strong> dniprospecproject@lll.dsp.ua</p>
+                <p><strong>Пошта підприємства: </strong> dniprospectechmash@lll.dsp.ua</p>
+                <p><strong>Графік роботи: </strong> Безперебійно</p>
             </div>
         </section>
 
@@ -184,12 +187,24 @@
 
         window.addEventListener("scroll", () => {
             let current = "";
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute("id");
-                }
-            });
+
+            // Перевірка, чи ми в самому низу сторінки
+            const isBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2;
+
+            if (isBottom) {
+                // Якщо низ сторінки — беремо ID останньої секції
+                current = sections[sections.length - 1].getAttribute("id");
+            } else {
+                // Звичайна логіка підсвічування при скролі
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120; // трохи збільшив відступ для точності
+                    if (window.pageYOffset >= sectionTop) {
+                        current = section.getAttribute("id");
+                    }
+                });
+            }
+
+            // Оновлюємо класи
             navLinks.forEach(link => {
                 link.classList.remove("active");
                 if (link.getAttribute("href") === `#${current}`) {

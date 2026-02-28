@@ -7,7 +7,8 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; 
+    padding-top: 50px;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f6f7;
     color: #333;
     margin: 0;
@@ -145,7 +146,7 @@ body {
 
 .contact-card {
     background: white;
-    padding: 20px;
+    padding: 35px;
     border-left: 4px solid #1f5c4d;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
@@ -174,5 +175,4 @@ body {
         font-size: 1.4rem;
     }
 }
-
 

@@ -7,3 +7,7 @@
 [Переглянути сайт](https://andriymoiskpi.github.io/Osnovy-Veb-programuvannya/PR1/)
 
 [Переглянути файли](./PR1/)
+
+Практична робота 2:
+
+У роботі

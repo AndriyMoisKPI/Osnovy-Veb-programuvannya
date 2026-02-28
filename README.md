@@ -3,4 +3,4 @@
 Список практичних робіт:
 Практична робота 1:
 Живий перегляд: https://andriymoiskpi.github.io/Osnovy-Veb-programuvannya/PR1/
-Перегляд коду: ./PR1/
+[Вихідний код](./PR1/)

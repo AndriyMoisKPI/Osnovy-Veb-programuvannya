@@ -2,6 +2,10 @@
    БАЗОВІ НАЛАШТУВАННЯ
 ================================= */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif; 
     background-color: #f4f6f7;
@@ -170,4 +174,5 @@ body {
         font-size: 1.4rem;
     }
 }
+
 

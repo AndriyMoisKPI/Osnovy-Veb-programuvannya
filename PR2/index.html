@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моніторинг КРМ | ТП «Лівобережна»</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav fixed-top" aria-label="Головна навігація">
+        <div class="container">
+            <a class="navbar-brand brand-block" href="#">
+                <img src="images/logo.jpg" alt="Логотип АТ Дніпроспецпроект" class="brand-logo" onerror="this.style.display='none'">
+                <span>АТ «ДНІПРОСПЕЦПРОЕКТ»</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Перемикач навігації">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto nav-custom align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#about">Про об'єкт</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#normative">Параметри</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#monitoring">Моніторинг КРМ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#charts-section">Графіки</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#history-section">Історія вимірів</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacts">Контакти</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <button id="themeToggle" class="btn btn-sm btn-outline-light" aria-label="Змінити тему">🌙 Темна</button>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#settingsModal" aria-label="Відкрити налаштування меж">⚙️ Межі</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container text-center">
+            <h1>Компенсаторна установка (КРМ)</h1>
+            <p class="lead">Система динамічного моніторингу ТП «Лівобережна» 35/10 кВ</p>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section id="about" aria-labelledby="about-title">
+            <h2 id="about-title" class="section-title">Оптимізація потужностей ТП «Лівобережна» 35/10 кВ/</h2>
+            <article>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Для забезпечення безперебійної роботи цехів «ДНІПРОСПЕЦТЕХМАШ» підстанцію укомплектовано системою КРМ. Це стратегічне рішення дозволило мінімізувати втрати при виготовленні енергоємних металоконструкцій та стабілізувати напругу для випробувальних стендів.</p>
+                        <p>Нижче наведено моніторинг показників, що відображають ефективність енергоспоживання та поточний стан навантаження.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="normative" aria-labelledby="normative-title">
+            <h2 id="normative-title" class="section-title">Нормативні та граничні параметри</h2>
+            <div class="table-responsive">
+                <table class="table table-custom" id="normativeTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Параметр</th>
+                            <th scope="col">Одиниці виміру</th>
+                            <th scope="col">Абсолютний діапазон</th>
+                            <th scope="col">Нормальне значення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-param="qPower"><td>Реактивна потужність мережі</td><td>кВАр</td><td class="abs-range">-500 ... 500</td><td class="norm-range">-100 ... 100</td></tr>
+                        <tr data-param="cosPhi"><td>Коефіцієнт потужності (cos φ)</td><td>-</td><td class="abs-range">0.60 ... 1.00</td><td class="norm-range">0.92 ... 0.98</td></tr>
+                        <tr data-param="voltage"><td>Напруга мережі</td><td>В</td><td class="abs-range">350 ... 420</td><td class="norm-range">380 ... 400</td></tr>
+                        <tr data-param="stages"><td>Кількість увімкнених ступенів</td><td>шт.</td><td class="abs-range">0 ... 12</td><td class="norm-range">2 ... 8</td></tr>
+                        <tr data-param="temp"><td>Температура конденсаторів</td><td>°C</td><td class="abs-range">10 ... 70</td><td class="norm-range">20 ... 45</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="monitoring" aria-labelledby="monitoring-title">
+            <h2 id="monitoring-title" class="section-title">Панель моніторингу реального часу</h2>
+
+            <div class="controls-panel mb-4 p-3 rounded shadow-sm d-flex justify-content-between align-items-center flex-wrap gap-3 border-start border-4 border-success">
+                <div>
+                    <strong>Статус: </strong>
+                    <span id="autoStatus" class="badge bg-secondary fs-6" aria-live="polite">Вимкнено</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <label for="intervalSelect" class="fw-bold mb-0">Період:</label>
+                    <select id="intervalSelect" class="form-select form-select-sm" style="width: auto;" aria-label="Вибір інтервалу оновлення">
+                        <option value="1000" selected>1 сек</option>
+                        <option value="3000">3 сек</option>
+                        <option value="5000">5 сек</option>
+                    </select>
+                </div>
+                <div aria-live="polite">
+                    <strong>Оновлено: </strong>
+                    <span id="lastUpdate" class="font-monospace">--:--:--</span>
+                </div>
+                <div class="d-flex gap-2">
+                    <button id="updateBtn" class="btn btn-outline-primary btn-sm">Оновити зараз</button>
+                    <button id="autoUpdateBtn" class="btn btn-primary btn-sm">Увімкнути авто</button>
+                </div>
+            </div>
+
+            <div class="row g-4 dashboard" id="dashboard">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-monitor" id="card-qPower">
+                        <h5>Реактивна потужність</h5>
+                        <div class="value-display" aria-live="polite">
+                            <span id="val-qPower" class="big-number">0</span><span class="unit">кВАр</span>
+                        </div>
+                        <div id="status-qPower" class="status-indicator">Очікування даних...</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-monitor" id="card-cosPhi">
+                        <h5>Коефіцієнт потужності (cos φ)</h5>
+                        <div class="value-display" aria-live="polite">
+                            <span id="val-cosPhi" class="big-number">0.00</span><span class="unit"></span>
+                        </div>
+                        <div id="status-cosPhi" class="status-indicator">Очікування даних...</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-monitor" id="card-voltage">
+                        <h5>Напруга мережі</h5>
+                        <div class="value-display" aria-live="polite">
+                            <span id="val-voltage" class="big-number">0</span><span class="unit">В</span>
+                        </div>
+                        <div id="status-voltage" class="status-indicator">Очікування даних...</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-monitor" id="card-stages">
+                        <h5>Увімкнені ступені</h5>
+                        <div class="value-display" aria-live="polite">
+                            <span id="val-stages" class="big-number">0</span><span class="unit">шт. з 12</span>
+                        </div>
+                        <div id="status-stages" class="status-indicator">Очікування даних...</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-monitor" id="card-temp">
+                        <h5>Температура конденсаторів</h5>
+                        <div class="value-display" aria-live="polite">
+                            <span id="val-temp" class="big-number">0</span><span class="unit">°C</span>
+                        </div>
+                        <div id="status-temp" class="status-indicator">Очікування даних...</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-monitor bg-transparent">
+                        <h5>Експлуатаційна інформація</h5>
+                        <div class="mt-3" aria-live="polite">
+                            <p class="mb-2"><strong>Стан контакторів:</strong> <span id="val-contactors" class="badge bg-success">УВІМКНЕНО</span></p>
+                            <p class="mb-0"><strong>Зекономлено енергії:</strong> <br><span id="val-saving" class="fs-4 fw-bold text-success">0.0</span> кВт·год</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="charts-section" class="mt-5" aria-labelledby="charts-title">
+            <div class="d-flex justify-content-between align-items-center border-bottom border-3 border-success pb-2 mb-4">
+                <h2 id="charts-title" class="section-title border-0 mb-0 mt-0">Аналітика та графіки</h2>
+                <button id="exportCsvBtn" class="btn btn-outline-primary btn-sm">Експорт у CSV</button>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card-monitor" style="display: block;">
+                        <h6>Динаміка реактивної потужності</h6>
+                        <div class="chart-wrapper"><canvas id="chart-qPower"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card-monitor" style="display: block;">
+                        <h6>Динаміка коефіцієнту потужності</h6>
+                        <div class="chart-wrapper"><canvas id="chart-cosPhi"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card-monitor" style="display: block;">
+                        <h6>Динаміка напруги мережі</h6>
+                        <div class="chart-wrapper"><canvas id="chart-voltage"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card-monitor" style="display: block;">
+                        <h6>Динаміка температури конденсаторів</h6>
+                        <div class="chart-wrapper"><canvas id="chart-temp"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card-monitor" style="display: block;">
+                        <h6>Співвідношення увімкнених та вимкнених ступенів (Інтерактивно)</h6>
+                        <div class="chart-wrapper chart-wrapper-large"><canvas id="chart-stages"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="history-section" class="mt-5">
+            <h2 class="section-title">Історія останніх вимірювань</h2>
+            <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                <table class="table table-custom table-striped" id="historyLogTable">
+                    <thead>
+                        <tr>
+                            <th>Час</th>
+                            <th>Q (кВАр)</th>
+                            <th>cos φ</th>
+                            <th>U (В)</th>
+                            <th>T (°C)</th>
+                            <th>Ступені</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody">
+                    </tbody>
+                </table>
+            </div>
+            <button id="clearHistoryBtn" class="btn btn-sm btn-outline-danger mt-2">Очистити історію</button>
+        </section>
+
+        <section id="contacts" class="mt-5" aria-labelledby="contacts-title">
+            <h2 id="contacts-title" class="section-title">Контактна інформація</h2>
+            <div class="contact-card">
+                <p><strong>Адреса: </strong> Україна, Дніпропетровська обл., м. Дніпро, Лівобережний р-н, вул. Індустріальна, 9</p>
+                <p><strong>Телефони: </strong> +380 (56) 248-21-09 | +380 (96) 219-19-89</p>
+                <p><strong>Графік роботи: </strong> Безперебійно</p>
+                <p>
+                    <strong>Сайт ТП «Лівобережна»: </strong>
+                    <a href="https://andriymoiskpi.github.io/Osnovy-Veb-programuvannya/PR1/" style="color: var(--accent-link-color); text-decoration: none; border-bottom: 1px dashed var(--accent-link-color); "> https://dniprospecproject/tplivoberezhna/ </a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingsModalLabel">Налаштування меж параметрів</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="settingsForm">
+                        <div class="row mb-4">
+                            <h6 class="text-success border-bottom pb-2">Реактивна потужність (кВАр)</h6>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Абсолютні межі (Мін/Макс):</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="set-qPower-abs-min" step="1">
+                                    <input type="number" class="form-control" id="set-qPower-abs-max" step="1">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Норма (Мін/Макс):</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="set-qPower-min" step="1">
+                                    <input type="number" class="form-control" id="set-qPower-max" step="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <h6 class="text-success border-bottom pb-2">Коефіцієнт потужності (cos φ)</h6>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Абсолютні межі (Мін/Макс):</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="set-cosPhi-abs-min" step="0.01">
+                                    <input type="number" class="form-control" id="set-cosPhi-abs-max" step="0.01">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Норма (Мін/Макс):</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="set-cosPhi-min" step="0.01">
+                                    <input type="number" class="form-control" id="set-cosPhi-max" step="0.01">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <h6 class="text-success border-bottom pb-2">Напруга мережі (В)</h6>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Абсолютні межі (Мін/Макс):</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="set-voltage-abs-min" step="1">
+                                    <input type="number" class="form-control" id="set-voltage-abs-max" step="1">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Норма (Мін/Макс):</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="set-voltage-min" step="1">
+                                    <input type="number" class="form-control" id="set-voltage-max" step="1">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="resetSettingsBtn" class="btn btn-secondary">Скинути до базових</button>
+                    <button type="button" id="saveSettingsBtn" class="btn btn-primary">Зберегти зміни</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal">
+
+        <div class="modal-window">
+
+            <div class="modal-header">
+                <span id="modalIcon">⚠</span>
+                <h3 id="modalTitle">Підтвердження</h3>
+            </div>
+
+            <p id="modalMessage"></p>
+
+            <div class="modal-buttons">
+                <button id="confirmYes">Підтвердити</button>
+                <button id="confirmNo">Скасувати</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        © 2026 АТ «ДНІПРОСПЕЦПРОЕКТ»
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script/script.js"></script>
+</body>
+</html>

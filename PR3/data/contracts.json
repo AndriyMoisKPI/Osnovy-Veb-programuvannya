@@ -1,0 +1,38 @@
+[
+  {
+    "id": "6dbdcb65-c3fe-4887-9745-8bc4eaba3568",
+    "number": "111/12-32",
+    "customer": "АТ \"КиївТеплоЕнерго\"",
+    "targetObject": "Будинок серії 111-96, 2 під'їзди, вул. Садова, 12, м. Київ",
+    "cost": 1200000,
+    "savingsPercentage": 2.2,
+    "durationMonths": 16
+  },
+  {
+    "id": "382af243-913a-48e7-8031-824aee8da674",
+    "number": "111/12-37",
+    "customer": "АТ \"КиївТеплоЕнерго\"",
+    "targetObject": "Будинок серії 111-96, 2 під'їзди, вул. Садова, 11, м. Київ",
+    "cost": 1200000,
+    "savingsPercentage": 2.2,
+    "durationMonths": 16
+  },
+  {
+    "id": "41bcd0f4-1a16-41be-92ba-a2f2b21ff1ea",
+    "number": "Д-26-04-056",
+    "customer": "АТ \"ЕнергоАтом\"",
+    "targetObject": "Будинок серії 121-60-25, 1 під'їзд, вул. Енергетиків, 11, м. Орбіта",
+    "cost": 960000,
+    "savingsPercentage": 2.3,
+    "durationMonths": 11
+  },
+  {
+    "id": "0e873cf8-0db6-4af7-9244-7c026918bd60",
+    "number": "Д-26-04-059",
+    "customer": "АТ \"ЕнергоАтом\"",
+    "targetObject": "Будинок серії 121-60-25, 2 під'їзди, вул. Будівельників, 9, м. Орбіта",
+    "cost": 1600000,
+    "savingsPercentage": 3.5,
+    "durationMonths": 20
+  }
+]

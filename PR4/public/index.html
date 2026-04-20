@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель керування вимикачами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Панель керування високовольтними вимикачами</h1>
+    </header>
+
+    <section class="controls">
+
+        <!-- ДОДАТИ -->
+        <div class="card">
+            <h2>Додати вимикач</h2>
+            <form id="addForm">
+                <input type="text" placeholder="Назва" id="name" required>
+                <input type="number" placeholder="Напруга (кВ)" id="voltage" required>
+                <input type="number" placeholder="Струм (А)" id="current" required>
+
+                <select id="mechanism">
+                    <option value="spring">Пружинний</option>
+                    <option value="hydraulic">Гідравлічний</option>
+                    <option value="motor">Моторний</option>
+                </select>
+
+                <button type="submit" class="btn primary">Додати вимикач</button>
+            </form>
+        </div>
+
+        <!-- ПОШУК -->
+        <div class="card">
+            <h2>Пошук і фільтрація</h2>
+            <input type="text" id="search" placeholder="Глобальний пошук">
+            <input type="number" id="filterVoltage" placeholder="Фільтр: Напруга">
+
+            <select id="filterPosition">
+                <option value="">Всі стани</option>
+                <option value="open">Відкритий</option>
+                <option value="closed">Закритий</option>
+            </select>
+
+            <button onclick="fetchBreakers()" class="btn">Застосувати</button>
+        </div>
+
+        <!-- СОРТУВАННЯ -->
+        <div class="card">
+            <h2>Сортування</h2>
+
+            <select id="sortBy">
+                <option value="">Без сортування</option>
+                <option value="id">ID</option>
+                <option value="name">Назва</option>
+                <option value="voltage">Напруга</option>
+                <option value="switchingCount">Комутації</option>
+            </select>
+
+            <select id="sortOrder">
+                <option value="asc">Зростання</option>
+                <option value="desc">Спадання</option>
+            </select>
+
+            <button onclick="fetchBreakers()" class="btn">Сортувати</button>
+        </div>
+
+    </section>
+
+    <main>
+        <div id="cardsContainer" class="grid"></div>
+    </main>
+
+    <div class="pagination">
+        <button id="prevBtn">⬅ Попередня</button>
+        <span id="pageInfo">Сторінка 1</span>
+        <button id="nextBtn">Наступна ➡</button>
+    </div>
+
+    <footer>
+        © 2026 ЕНЕРГОКОМПАНІЯ
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

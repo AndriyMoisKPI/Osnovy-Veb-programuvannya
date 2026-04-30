@@ -1,0 +1,14 @@
+{
+  "name": "power-quality-monitoring-v11",
+  "version": "1.0.0",
+  "description": "Практична робота №5. Варіант 11: Моніторинг якості електроенергії",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.3"
+  }
+}

@@ -35,15 +35,25 @@ Data Management: обробка даних у форматі JSON, програ�
 Проєкт побудований за стандартами розробки серверних додатків на Express:
 
 power_quality_monitoring_v11/
+
 │
+
 ├── package.json
+
 ├── server.js
+
 │
+
 └── public/
+
     ├── index.html
+    
     ├── styles.css
+    
     ├── api.js
+    
     ├── charts.js
+    
     └── app.js
 
 Де:

@@ -36,25 +36,25 @@ Data Management: обробка даних у форматі JSON, програ�
 
 power_quality_monitoring_v11/
 
-│
+    │
 
-├── package.json
+    ├── package.json
 
-├── server.js
+    ├── server.js
 
-│
+    │
 
-└── public/
+    └── public/
 
-    ├── index.html
+        ├── index.html
     
-    ├── styles.css
+        ├── styles.css
     
-    ├── api.js
+        ├── api.js
     
-    ├── charts.js
+        ├── charts.js
     
-    └── app.js
+        └── app.js
 
 Де:
 

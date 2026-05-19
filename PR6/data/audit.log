@@ -1,0 +1,16 @@
+{"time":"2026-05-19T13:38:11.029Z","type":"REGISTER_SUCCESS","userId":"a06ed7e5-5367-4936-bec8-1b9fe288c1e9","email":"avmoisiienko@gmail.com","role":"operator","ip":"::1"}
+{"time":"2026-05-19T13:38:21.679Z","type":"LOGIN_SUCCESS","userId":"a06ed7e5-5367-4936-bec8-1b9fe288c1e9","email":"avmoisiienko@gmail.com","role":"operator","ip":"::1"}
+{"time":"2026-05-19T13:38:24.104Z","type":"GRID_BALANCE_VIEW","userId":"a06ed7e5-5367-4936-bec8-1b9fe288c1e9","role":"operator","ip":"::1"}
+{"time":"2026-05-19T13:38:36.815Z","type":"GRID_ADJUSTMENT","userId":"a06ed7e5-5367-4936-bec8-1b9fe288c1e9","role":"operator","ip":"::1","payload":{"targetZone":"central","adjustmentMW":12.1,"reason":"Балансування пікового навантаження"}}
+{"time":"2026-05-19T15:20:42.497Z","type":"REGISTER_SUCCESS","userId":"9c2b8ba9-72e1-400e-8864-e2d880a08924","email":"operator_test@example.com","role":"operator","ip":"::1"}
+{"time":"2026-05-19T15:21:45.685Z","type":"LOGIN_SUCCESS","userId":"9c2b8ba9-72e1-400e-8864-e2d880a08924","email":"operator_test@example.com","role":"operator","ip":"::1"}
+{"time":"2026-05-19T15:22:11.778Z","type":"LOGIN_SUCCESS","userId":"9c2b8ba9-72e1-400e-8864-e2d880a08924","email":"operator_test@example.com","role":"operator","ip":"::1"}
+{"time":"2026-05-19T15:22:49.456Z","type":"GRID_BALANCE_VIEW","userId":"9c2b8ba9-72e1-400e-8864-e2d880a08924","role":"operator","ip":"::1"}
+{"time":"2026-05-19T15:30:13.565Z","type":"GRID_ADJUSTMENT","userId":"9c2b8ba9-72e1-400e-8864-e2d880a08924","role":"operator","ip":"::1","payload":{"targetZone":"іві","adjustmentMW":12.5,"reason":"Балансування пікового навантаження"}}
+{"time":"2026-05-19T15:33:22.979Z","type":"REGISTER_FAILED","email":"operator_test@example.com","ip":"::1","reason":"Користувач з таким email вже існує"}
+{"time":"2026-05-19T15:36:08.216Z","type":"REGISTER_FAILED","email":"operator_test@example.com","ip":"::1","reason":"Користувач з таким email вже існує"}
+{"time":"2026-05-19T15:36:28.643Z","type":"REGISTER_SUCCESS","userId":"2eee5781-449c-48b5-8327-9770432c9608","email":"operator_test1@example.com","role":"operator","ip":"::1"}
+{"time":"2026-05-19T15:37:36.109Z","type":"LOGIN_SUCCESS","userId":"2eee5781-449c-48b5-8327-9770432c9608","email":"operator_test1@example.com","role":"operator","ip":"::1"}
+{"time":"2026-05-19T15:40:41.662Z","type":"GRID_BALANCE_VIEW","userId":"2eee5781-449c-48b5-8327-9770432c9608","role":"operator","ip":"::1"}
+{"time":"2026-05-19T15:41:19.676Z","type":"GRID_ADJUSTMENT","userId":"2eee5781-449c-48b5-8327-9770432c9608","role":"operator","ip":"::1","payload":{"targetZone":"Центральний район","adjustmentMW":12.5,"reason":"Підвищення вечірнього навантаження"}}
+{"time":"2026-05-19T15:43:46.790Z","type":"PASSWORD_CHANGED","userId":"2eee5781-449c-48b5-8327-9770432c9608","email":"operator_test1@example.com","ip":"::1"}

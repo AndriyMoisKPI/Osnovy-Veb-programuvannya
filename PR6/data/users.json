@@ -1,1 +1,41 @@
-
+[
+  {
+    "id": "a06ed7e5-5367-4936-bec8-1b9fe288c1e9",
+    "name": "Андрій Мойсієнко",
+    "email": "avmoisiienko@gmail.com",
+    "passwordHash": "$2a$10$9K983S2hEZIsBr35gs5hy.PMMVwTQNICEKSWPBdnkuv5Wlr7XhAF2",
+    "role": "operator",
+    "createdAt": "2026-05-19T13:38:11.027Z",
+    "passwordChangedAt": "2026-05-19T13:38:11.027Z",
+    "lastLoginAt": "2026-05-19T13:38:21.677Z",
+    "lastLoginIp": "::1",
+    "failedLoginAttempts": 0,
+    "lockedUntil": null
+  },
+  {
+    "id": "9c2b8ba9-72e1-400e-8864-e2d880a08924",
+    "name": "Test Operator",
+    "email": "operator_test@example.com",
+    "passwordHash": "$2a$10$CNoxQdi2MNa985PS88C/CeYl4CiffOA/k.s3J1A1WLaKBS6JSFI.O",
+    "role": "operator",
+    "createdAt": "2026-05-19T15:20:42.496Z",
+    "passwordChangedAt": "2026-05-19T15:20:42.496Z",
+    "lastLoginAt": "2026-05-19T15:22:11.776Z",
+    "lastLoginIp": "::1",
+    "failedLoginAttempts": 0,
+    "lockedUntil": null
+  },
+  {
+    "id": "2eee5781-449c-48b5-8327-9770432c9608",
+    "name": "Test Operator",
+    "email": "operator_test1@example.com",
+    "passwordHash": "$2a$10$FtfJrQ4LiY3Xfg4YzAM13.2AUCELiDZ8NNQy4ifKjZXARbAx033tW",
+    "role": "operator",
+    "createdAt": "2026-05-19T15:36:28.640Z",
+    "passwordChangedAt": "2026-05-19T15:43:46.787Z",
+    "lastLoginAt": "2026-05-19T15:37:36.106Z",
+    "lastLoginIp": "::1",
+    "failedLoginAttempts": 0,
+    "lockedUntil": null
+  }
+]
